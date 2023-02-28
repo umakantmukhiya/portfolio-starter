@@ -40,11 +40,11 @@ const Banner = () => {
               <span className="text-white mr-4">I am a</span>
               <TypeAnimation
                 sequence={[
-                  "Developer",
+                  "Student",
                   2000,
                   "Programmer",
                   2000,
-                  "Youtuber",
+                  "Developer",
                   2000,
                 ]}
                 speed={50}
@@ -60,8 +60,11 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              Here's a quote from Albert Einstein:
+              <blockquote className='font-secondary leading-tight text-[20px] tracking-wider
+                  font-semibold mb-6'>
+    "The important thing is not to stop questioning. Curiosity has its own reason for existing."
+</blockquote>
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
