@@ -54,7 +54,10 @@ const Services = () => {
               What I Do.
             </h2>
             <h3 className="h3 max-w-[455px] mb-16 ">
-              I'm a Computer Science MTech. Student at NIT Durgapur.
+              <ul>
+                <li>Passionate Programmer</li>
+                <li>Drive for learning and creating impactful solutions.</li>
+              </ul>
             </h3>
             <button className="btn btn-sm">
               <a href="https://github.com/umakantmukhiya?tab=repositories">
