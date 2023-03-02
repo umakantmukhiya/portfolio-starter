@@ -21,7 +21,7 @@ const Banner = () => {
 
 
   const [quote,setQuote] = useState('');
-  const [loading,setLoading] = useState(true);
+  const [loading,setLoading] = useState(false);
   const [author,setAuthor]= useState('');
   
   useEffect(()=>{
@@ -33,6 +33,7 @@ const Banner = () => {
       clearInterval(intervalID);
   }
   },[])
+
   function getQuote() {
       fetch('http://quotes.rest/qod.json?category=inspire')
       .then(res=> res.json())
