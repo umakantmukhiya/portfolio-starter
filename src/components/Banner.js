@@ -61,10 +61,13 @@ const Banner = () => {
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Here's a quote from Albert Einstein:
-              <blockquote className='font-secondary leading-tight text-[20px] tracking-wider
-                  font-semibold mb-6'>
-    "The important thing is not to stop questioning. Curiosity has its own reason for existing."
-</blockquote>
+              <blockquote
+                className="font-secondary leading-tight text-[20px] tracking-wider
+                  font-semibold mb-6"
+              >
+                "The important thing is not to stop questioning. Curiosity has
+                its own reason for existing."
+              </blockquote>
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
@@ -73,8 +76,13 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="flex max-w-max gap-x-6 items-center mb-12 mx-auto lg:mx-0"
             >
-              <button className="btn btn-lg">Contact Me</button>
-              <a href="#" className="text-gradient btn-link">
+              <button className="btn btn-lg">
+                <a href="https://wa.link/gjyo89">Contact Me</a>
+              </button>
+              <a
+                href="https://github.com/umakantmukhiya?tab=repositories"
+                className="text-gradient btn-link"
+              >
                 My Portfolio
               </a>
             </motion.div>
@@ -87,13 +95,13 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0"
             >
-              <a href="#">
-                <FaYoutube />
+              <a href="https://twitter.com/UMukhiya">
+                <FaTwitter />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/umakantmukhiya/">
                 <FaLinkedinIn />
               </a>
-              <a href="#">
+              <a href="https://github.com/umakantmukhiya?tab=repositories">
                 <FaGithub />
               </a>
             </motion.div>
