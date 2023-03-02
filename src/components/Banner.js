@@ -9,8 +9,44 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 //variants
 import { fadeIn } from "../variants";
+//quotes
+import {useState,useEffect} from "react";
+
+
+
+
+
 
 const Banner = () => {
+
+
+  const [quote,setQuote] = useState('');
+  const [loading,setLoading] = useState(true);
+  const [author,setAuthor]= useState('');
+  
+  useEffect(()=>{
+      getQuote();
+     const intervalID = setInterval(()=>{
+      getQuote()
+     }, 24 * 60 * 60 * 1000);
+  return ()=>{
+      clearInterval(intervalID);
+  }
+  },[])
+  function getQuote() {
+      fetch('http://quotes.rest/qod.json?category=inspire')
+      .then(res=> res.json())
+      .then(data=>{
+          console.log(data);
+          setQuote(data.contents.quotes[0].quote);
+          setAuthor(data.contents.quotes[0].author);
+          
+      })
+  }
+
+
+  
+
   return (
     <section
       className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
@@ -60,14 +96,15 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Here's a quote from Albert Einstein:
+              Quote of the day by <u>{author}</u>
+              <br/>
               <blockquote
                 className="font-secondary leading-tight text-[20px] tracking-wider
                   font-semibold mb-6"
               >
-                "The important thing is not to stop questioning. Curiosity has
-                its own reason for existing."
+                "{quote}"
               </blockquote>
+              
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.6)}
@@ -121,5 +158,6 @@ const Banner = () => {
     </section>
   );
 };
+
 
 export default Banner;
