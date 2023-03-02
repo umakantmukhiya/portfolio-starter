@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 //variants
 import { fadeIn } from "../variants";
 //quotes
-import {useState,useEffect} from "react";
+// import {useState,useEffect} from "react";
 
 
 
@@ -20,30 +20,30 @@ import {useState,useEffect} from "react";
 const Banner = () => {
 
 
-  const [quote,setQuote] = useState('');
-  const [loading,setLoading] = useState(false);
-  const [author,setAuthor]= useState('');
+  // const [quote,setQuote] = useState('');
+  // const [loading,setLoading] = useState(false);
+  // const [author,setAuthor]= useState('');
   
-  useEffect(()=>{
-      getQuote();
-     const intervalID = setInterval(()=>{
-      getQuote()
-     }, 24 * 60 * 60 * 1000);
-  return ()=>{
-      clearInterval(intervalID);
-  }
-  },[])
+  // useEffect(()=>{
+  //     getQuote();
+  //    const intervalID = setInterval(()=>{
+  //     getQuote()
+  //    }, 24 * 60 * 60 * 1000);
+  // return ()=>{
+  //     clearInterval(intervalID);
+  // }
+  // },[])
 
-  function getQuote() {
-      fetch('http://quotes.rest/qod.json?category=inspire')
-      .then(res=> res.json())
-      .then(data=>{
-          console.log(data);
-          setQuote(data.contents.quotes[0].quote);
-          setAuthor(data.contents.quotes[0].author);
+  // function getQuote() {
+  //     fetch('http://quotes.rest/qod.json?category=inspire')
+  //     .then(res=> res.json())
+  //     .then(data=>{
+  //         console.log(data);
+  //         setQuote(data.contents.quotes[0].quote);
+  //         setAuthor(data.contents.quotes[0].author);
           
-      })
-  }
+  //     })
+  // }
 
 
   
@@ -97,13 +97,13 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Quote of the day by <u>{author}</u>
+              Quote of the day by <u>Sadhguru</u>
               <br/>
               <blockquote
                 className="font-secondary leading-tight text-[20px] tracking-wider
                   font-semibold mb-6"
               >
-                "{quote}"
+                "Do not try to fix whatever comes into your life. Fix yourself in such a way that whatever comes, you will be fine."
               </blockquote>
               
             </motion.p>
